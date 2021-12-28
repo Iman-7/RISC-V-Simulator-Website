@@ -1,0 +1,18 @@
+{% extends "public/templates/public_templates.html" %}
+{% block title %}Home{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3> Welcome to our RISC-V Simulator!! </h3>
+            <hr>
+            <p> This project is used to implement a RISC-V simulator to trace the execution of the RV32I Instructions. </p>
+            <li> To use the simulator, please go to the <strong>"Test"</strong> tab to upload your input file.</li>
+            <li> After pressing <strong>Run</strong>, the output will appear in the <strong>"Output"</strong> tab.</li>
+            <li> The output shows the name of the current executing instruction followed by <strong> the program counter value, the contents of the register file and the memory contents</stronng>. </li>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

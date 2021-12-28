@@ -1,0 +1,20 @@
+.data
+
+.address
+5000   # starting address of instructions
+
+.text
+# The program here tests the if-else implementation
+# x19 --> 2 (result = 15 - 13 = 2 , since x22 != x23)
+# Used instructions: bne, beq, addi, add, sub, ecall
+
+addi x22,zero,5
+addi x23,zero,6
+addi x20,zero,15
+addi x21,zero,13
+bne x22, x23, Else
+add x19, x20, x21
+beq x0, x0, Exit //unconditional
+Else: sub x19, x20, x21
+Exit:
+ecall

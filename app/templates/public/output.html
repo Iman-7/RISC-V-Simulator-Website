@@ -1,0 +1,30 @@
+{% extends "public/templates/public_templates.html" %}
+{% block title %}Output{% endblock %}
+{% block main %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Output</h1>
+            <hr>
+            {% for line in out.splitlines() %}
+            {% if line.startswith("Instruction") or line.endswith(":") %}
+            <h3> {{ line }} </h3>
+            {% elif line.endswith(" 0") %}
+            <li>  {{ line }} </li>
+            {% else %}
+            <li><strong>  {{ line }} </strong> </li>
+            {%endif%}
+            {%if "\n\n" in line%}
+            <h5> </h5>
+            {%endif%}
+            {% endfor %}
+
+            <h3>Note:</h3>
+            <p> The memory follows the big endian style. Therefore, the least significant bit of each byte is located on the right.</p>
+            <p> Each Four Bytes represent one instruction. </p>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

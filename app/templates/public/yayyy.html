@@ -1,0 +1,18 @@
+{% extends "public/templates/public_templates.html" %}
+{% block title %}RISC-V Simulator{% endblock %}
+{% block main %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1> Come on test our simulator: </h1>
+            <hr>
+            <title>Upload new File</title>
+            <form method=post enctype=multipart/form-data>
+              <input type=file name=file>
+              <input type=submit value=Run>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
